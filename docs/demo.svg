@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 440" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">
+  <!-- window -->
+  <rect x="8" y="8" width="744" height="424" rx="12" fill="#0d1117" stroke="#30363d" stroke-width="1.5"/>
+  <!-- title bar -->
+  <circle cx="34" cy="34" r="6" fill="#ff5f56"/>
+  <circle cx="54" cy="34" r="6" fill="#ffbd2e"/>
+  <circle cx="74" cy="34" r="6" fill="#27c93f"/>
+  <text x="380" y="39" text-anchor="middle" font-size="14" fill="#8b949e">warmstart — demo</text>
+  <line x1="8" y1="56" x2="752" y2="56" stroke="#30363d" stroke-width="1"/>
+
+  <!-- scene caption (top) -->
+  <text x="40" y="92" font-size="17" font-weight="bold" fill="#f85149">▾ without warmstart — the agent guesses
+    <animate attributeName="opacity" dur="14s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;.02;.04;.44;.46;1"/>
+  </text>
+  <text x="40" y="92" font-size="17" font-weight="bold" fill="#3fb950">▾ with warmstart — verified, one shot
+    <animate attributeName="opacity" dur="14s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;.49;.51;.965;.985;1"/>
+  </text>
+
+  <!-- ===== scene 1 lines ===== -->
+  <text x="40" y="138" font-size="18" fill="#c9d1d9"><tspan fill="#3fb950">$</tspan> npm test
+    <animate attributeName="opacity" dur="14s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;.04;.06;.44;.46;1"/>
+  </text>
+  <text x="40" y="168" font-size="18" fill="#f85149">  ✗ Error: no test specified
+    <animate attributeName="opacity" dur="14s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;.09;.11;.44;.46;1"/>
+  </text>
+  <text x="40" y="198" font-size="18" fill="#c9d1d9"><tspan fill="#3fb950">$</tspan> pytest
+    <animate attributeName="opacity" dur="14s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;.14;.16;.44;.46;1"/>
+  </text>
+  <text x="40" y="228" font-size="18" fill="#f85149">  ✗ command not found
+    <animate attributeName="opacity" dur="14s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;.19;.21;.44;.46;1"/>
+  </text>
+  <text x="40" y="258" font-size="18" fill="#c9d1d9"><tspan fill="#3fb950">$</tspan> grep -r scripts package.json …
+    <animate attributeName="opacity" dur="14s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;.25;.27;.44;.46;1"/>
+  </text>
+  <text x="40" y="296" font-size="18" fill="#8b949e">  … 8 turns burned — every repo, every session
+    <animate attributeName="opacity" dur="14s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;.31;.33;.44;.46;1"/>
+  </text>
+
+  <!-- ===== scene 2 lines (same rows) ===== -->
+  <text x="40" y="138" font-size="18" fill="#c9d1d9"><tspan fill="#3fb950">$</tspan> npx warmstart init
+    <animate attributeName="opacity" dur="14s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;.51;.53;.965;.985;1"/>
+  </text>
+  <text x="40" y="168" font-size="18" fill="#c9d1d9"><tspan fill="#3fb950">  ✓ install</tspan>   npm install
+    <animate attributeName="opacity" dur="14s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;.57;.59;.965;.985;1"/>
+  </text>
+  <text x="40" y="198" font-size="18" fill="#c9d1d9"><tspan fill="#3fb950">  ✓ build</tspan>     npm run build
+    <animate attributeName="opacity" dur="14s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;.62;.64;.965;.985;1"/>
+  </text>
+  <text x="40" y="228" font-size="18" fill="#c9d1d9"><tspan fill="#3fb950">  ✓ test</tspan>      npm run test
+    <animate attributeName="opacity" dur="14s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;.67;.69;.965;.985;1"/>
+  </text>
+  <text x="40" y="258" font-size="18" fill="#58a6ff">  → AGENTS.md written · MCP server ready
+    <animate attributeName="opacity" dur="14s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;.72;.74;.965;.985;1"/>
+  </text>
+  <text x="40" y="296" font-size="18" fill="#3fb950">  the agent reads it — right command, first try
+    <animate attributeName="opacity" dur="14s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;.81;.83;.965;.985;1"/>
+  </text>
+
+  <!-- footer tagline (constant) -->
+  <text x="40" y="356" font-size="15" fill="#8b949e">npx warmstart init  ·  stop your agent relearning your repo</text>
+  <!-- blinking cursor -->
+  <rect x="40" y="378" width="11" height="20" fill="#3fb950">
+    <animate attributeName="opacity" dur="1s" repeatCount="indefinite" values="1;1;0;0" keyTimes="0;.5;.5;1"/>
+  </rect>
+</svg>
