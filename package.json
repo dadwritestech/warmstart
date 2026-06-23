@@ -31,9 +31,9 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/USER/warmstart.git"
+    "url": "git+https://github.com/dadwritestech/warmstart.git"
   },
-  "homepage": "https://github.com/USER/warmstart#readme",
+  "homepage": "https://github.com/dadwritestech/warmstart#readme",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.0.0",
     "cross-spawn": "^7.0.3",
