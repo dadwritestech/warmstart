@@ -13,6 +13,9 @@
     "typecheck": "tsc --noEmit"
   },
   "engines": { "node": ">=18" },
+  "keywords": ["mcp", "ai-agents", "claude-code", "cursor", "codex", "agents-md", "dev-tools", "monorepo"],
+  "repository": { "type": "git", "url": "git+https://github.com/USER/warmstart.git" },
+  "homepage": "https://github.com/USER/warmstart#readme",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.0.0",
     "cross-spawn": "^7.0.3",
