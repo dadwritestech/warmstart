@@ -10,7 +10,7 @@ Every coding agent — Claude Code, Cursor, Codex, Copilot — pays the same tax
 npx warmstart init
 ```
 
-![warmstart: before vs after](docs/demo.svg)
+![warmstart demo](docs/demo.gif)
 
 > *Watch an agent waste 8 turns finding the test command → watch it read `AGENTS.md` and nail it in 1.*
 
