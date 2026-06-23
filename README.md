@@ -35,6 +35,28 @@ The stamp states **what was proven, where, and when** — never a bare "verified
 3. **Verify** — runs the safe candidates and records honest, scoped results.
 4. **Emit** — writes a delimited block in `AGENTS.md` (never clobbering your prose) and registers a `warmstart serve` MCP server for Claude Code.
 
+## Plays nice with your existing `AGENTS.md`
+
+Already have a hand-written `AGENTS.md`? warmstart **never overwrites it and never errors** — it appends a single delimited block and leaves everything else untouched. Your file ends up with two zones that coexist:
+
+```markdown
+# My Project
+Hand-written notes you care about.   ← yours forever, never touched
+
+## Gotchas
+- Never run migrations on Friday.
+
+<!-- warmstart:start -->
+  verified dev-loop commands         ← warmstart owns / refreshes only this
+<!-- warmstart:end -->
+```
+
+- **First touch of a hand-written file** → backs it up to `AGENTS.md.bak`, then appends the block.
+- **Re-runs are idempotent** → warmstart replaces *only* the content between its markers (re-verifying the commands), so sections never stack up as duplicates.
+- **Your prose, architecture notes, and conventions stay yours.** warmstart only manages the "how to actually run it" block.
+
+Curated human knowledge above, machine-verified commands below — kept honest and current without stepping on your work.
+
 ## Safety & privacy
 
 - **Runs fully locally.** No telemetry. No network except your repo's own commands.
