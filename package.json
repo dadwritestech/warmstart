@@ -4,23 +4,42 @@
   "description": "Self-verifying operational manifest for coding agents. npx warmstart init.",
   "type": "module",
   "license": "MIT",
-  "bin": { "warmstart": "dist/cli.js" },
-  "files": ["dist"],
+  "bin": {
+    "warmstart": "dist/cli.js"
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsup",
     "test": "vitest run",
     "test:watch": "vitest",
     "typecheck": "tsc --noEmit"
   },
-  "engines": { "node": ">=18" },
-  "keywords": ["mcp", "ai-agents", "claude-code", "cursor", "codex", "agents-md", "dev-tools", "monorepo"],
-  "repository": { "type": "git", "url": "git+https://github.com/USER/warmstart.git" },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "mcp",
+    "ai-agents",
+    "claude-code",
+    "cursor",
+    "codex",
+    "agents-md",
+    "dev-tools",
+    "monorepo"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/USER/warmstart.git"
+  },
   "homepage": "https://github.com/USER/warmstart#readme",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.0.0",
     "cross-spawn": "^7.0.3",
     "smol-toml": "^1.3.0",
-    "yaml": "^2.5.0"
+    "yaml": "^2.5.0",
+    "zod": "^3.25.76"
   },
   "devDependencies": {
     "@types/cross-spawn": "^6.0.6",
