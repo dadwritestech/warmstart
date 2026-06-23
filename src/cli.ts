@@ -1,6 +1,7 @@
 import { createInterface } from 'node:readline/promises';
 import { join } from 'node:path';
-import { pathToFileURL } from 'node:url';
+import { fileURLToPath } from 'node:url';
+import { realpathSync } from 'node:fs';
 import { runInit } from './init.js';
 import { serve } from './mcp/server.js';
 import { loadManifest } from './store.js';
@@ -47,6 +48,21 @@ export async function main(argv: string[]): Promise<number> {
   }
 }
 
-if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+/**
+ * True when this module is the process entrypoint. Resolves symlinks on BOTH
+ * sides so global installs work — there `process.argv[1]` is the bin symlink
+ * (e.g. /usr/local/bin/warmstart) while import.meta.url is the resolved
+ * dist/cli.js; a naive string/URL compare fails and main() never runs.
+ */
+export function isEntrypoint(argv1: string | undefined, metaUrl: string): boolean {
+  if (!argv1) return false;
+  try {
+    return realpathSync(argv1) === realpathSync(fileURLToPath(metaUrl));
+  } catch {
+    return false;
+  }
+}
+
+if (isEntrypoint(process.argv[1], import.meta.url)) {
   main(process.argv.slice(2)).then((code) => process.exit(code));
 }

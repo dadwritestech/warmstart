@@ -1,6 +1,6 @@
 {
   "name": "warmstart",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Self-verifying operational manifest for coding agents. npx warmstart init.",
   "type": "module",
   "license": "MIT",

@@ -1,6 +1,10 @@
 # Changelog
 
-## 0.1.0 — unreleased
+## 0.1.1
+
+- **Fix:** global installs (`npm i -g warmstart`) were a silent no-op — the entrypoint check compared the bin symlink path against the resolved module path and never matched, so `main()` never ran. Now resolves symlinks on both sides (`realpathSync`). Added a regression test. (`npx warmstart` was unaffected.)
+
+## 0.1.0
 
 Initial MVP.
 
