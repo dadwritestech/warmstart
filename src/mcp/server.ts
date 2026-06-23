@@ -18,7 +18,8 @@ export function buildHandlers(load: () => Manifest | null): Handlers {
   };
 }
 
-export async function serve(load: () => Manifest | null): Promise<void> {
+/** Build the configured MCP server (resource + tool registered). Transport-agnostic so it can be tested. */
+export function buildServer(load: () => Manifest | null): McpServer {
   const h = buildHandlers(load);
   const server = new McpServer({ name: 'warmstart', version: '0.1.0' });
 
@@ -40,5 +41,9 @@ export async function serve(load: () => Manifest | null): Promise<void> {
     },
   );
 
-  await server.connect(new StdioServerTransport());
+  return server;
+}
+
+export async function serve(load: () => Manifest | null): Promise<void> {
+  await buildServer(load).connect(new StdioServerTransport());
 }
